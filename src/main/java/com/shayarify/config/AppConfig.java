@@ -40,9 +40,8 @@ public class AppConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration cfg = new CorsConfiguration();
-        cfg.setAllowedOrigins(Collections.singletonList("http://localhost:5173")); // Allow frontend origin
-        cfg.setAllowedOrigins(Collections.singletonList("https://shayarify.netlify.app")); // Allow frontend origin (Netlify)
-        cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // List methods explicitly
+        cfg.setAllowedOrigins(Arrays.asList("http://localhost:5173", "https://shayarify.netlify.app"));
+cfg.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS")); // List methods explicitly
         cfg.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
         cfg.setExposedHeaders(Collections.singletonList("Authorization"));
         cfg.setAllowCredentials(true); // For cookies and authorization headers
